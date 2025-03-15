@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import User from '../models/user';
 
-// Kullanıcı Ekleme
 export const postCreateUser = async (req: Request, res: Response) => {
   try {
     const { username, email, password } = req.body;
@@ -15,7 +14,6 @@ export const postCreateUser = async (req: Request, res: Response) => {
   }
 };
 
-// Tüm Kullanıcıları Listele
 export const getUsers = async (req: Request, res: Response) => {
   const users = await User.find();
   res.json(users);
